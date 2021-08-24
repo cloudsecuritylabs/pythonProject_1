@@ -10,6 +10,7 @@ import re
 
 # run "az vm image list --all > vmimagelist.json"
 # TODO: get the filename as an user input
+file_name = input("give me the filename.")
 with open('vmimagelist.json', 'r') as f:
     data = json.load(f)
     f.close()
@@ -33,6 +34,7 @@ with open('publisher_skus', 'w') as f:
             f.write(f'\t {item}\n')
         f.write("------------------------------\n")
     f.close()
+
 
 def get_sku_for_publisher(publisher, mydict):
     return mydict[publisher]
